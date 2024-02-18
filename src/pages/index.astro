@@ -1,0 +1,122 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Icon from "../components/Icon.astro";
+---
+
+<Layout title="">
+  <main
+  id="home"
+  >
+    <div
+      class="flex justify-center items-center flex-col gap-4 pt-12"
+    >
+      <h1 class="text-6xl font-semibold flex items-center gap-4">
+        <div>
+          Hey! Soy <span class="text-yellow-500">Fido</span>
+        </div>
+        <img
+          src="/images/batman.png"
+          alt="batman"
+          class="object-cover w-16 h-30"
+        />
+      </h1>
+      <p id="sub" class="text-center text-xl">
+        <span class="text-yellow-300">Ingeniero en sistemas</span> especializado
+        en el desarrollo web fullstack. +4 años de experiencia realizando proyectos
+        de software de calidad con diferentes tecnologias.
+      </p>
+    </div>
+    <img
+      src="/images/logo.svg"
+      alt="bat"
+      class="size-20 absolute rotate-12 -z-10"
+    />
+    <div class="w-2/3 mx-auto mt-16 p-4 overflow-hidden">
+      <article
+        id="icons"
+        class="flex items-center justify-center mx-auto gap-4 -translate-x-[160%]"
+      >
+        <Icon name="nginx" svg="/icons/nginx.svg" />
+        <Icon name="docker" svg="/icons/docker.svg" />
+        <Icon name="linux" svg="/icons/linux.svg" />
+        <Icon name="graphql" svg="/icons/graphql.svg" />
+        <Icon name="postgresql" svg="/icons/postgresql.svg" />
+        <Icon name="mysql" svg="/icons/mysql.svg" />
+        <Icon name="nestjs" svg="/icons/nestjs.svg" />
+        <Icon name="express" svg="/icons/express.svg" />
+        <Icon name="nodejs" svg="/icons/nodejs.svg" />
+        <Icon name="nextjs" svg="/icons/nextjs.svg" />
+        <Icon name="react" svg="/icons/react.svg" />
+        <Icon name="angular" svg="/icons/angular.svg" />
+        <Icon name="typescript" svg="/icons/typescript.svg" />
+        <Icon name="js" svg="/icons/js.svg" />
+        <Icon name="tailwind" svg="/icons/tailwind.svg" />
+        <Icon name="css" svg="/icons/css.svg" />
+        <Icon name="html" svg="/icons/html.svg" />
+      </article>
+      <section id="projects">
+        <h2>Proyectos</h2>
+        <article class="p4 w-2/3 mx-auto">
+          <h3 class="text-xl text-yellow-400 font-thin">HealthTech</h3>
+          <img src="/projects/healthtech.png" alt="healthtech" />
+          <p class="text-sm font-thin">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            enim facere libero necessitatibus, temporibus, similique suscipit
+            aut eveniet nesciunt obcaecati molestias asperiores non illo
+            aspernatur veniam fugit unde, quas et!
+          </p>
+        </article>
+      </section>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 1000px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  #icons {
+    animation: icons 20s linear infinite both;
+  }
+
+  #icons:hover {
+    animation-play-state: paused;
+  }
+
+  #icons img:hover {
+  }
+
+  @keyframes title {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes icons {
+    to {
+      transform: translateX(140%);
+    }
+  }
+
+  h1 {
+    animation: title 1s ease-out both;
+  }
+
+  #sub {
+    animation: title 1s ease-out 1s both;
+  }
+</style>
