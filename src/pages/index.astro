@@ -2,18 +2,51 @@
 import Layout from "../layouts/Layout.astro";
 
 import Icon from "../components/Icon.astro";
+import Project from "../components/Project.astro";
+
+const projects = [
+  {
+    title: "HealthTech",
+    subtitle: "Consultoria medica online",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus veritatis doloribus suscipit reprehenderit illo eius optio possimus et aspernatur a quibusdam accusamus inventore voluptates rerum harum soluta, distinctio neque dignissimos!",
+    images: [
+      "/projects/healthtech/login.png",
+      "/projects/healthtech/config.png",
+      "/projects/healthtech/doctors.png",
+      "/projects/healthtech/meetings.png",
+      "/projects/healthtech/videocall.png",
+    ],
+  },
+  {
+    title: "Hotelmar",
+    subtitle: "Reservas de habitaciones para un hotel",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus veritatis doloribus suscipit reprehenderit illo eius optio possimus et aspernatur a quibusdam accusamus inventore voluptates rerum harum soluta, distinctio neque dignissimos!",
+    images: [
+      "/projects/hotelmar/home.png",
+      "/projects/hotelmar/booking.png",
+      "/projects/hotelmar/extras.png",
+      "/projects/hotelmar/detail.png",
+      "/projects/hotelmar/my-bookings.png",
+    ],
+  },
+  {
+    title: "GenXDB",
+    subtitle: "Generador de codigo para ORMs",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus veritatis doloribus suscipit reprehenderit illo eius optio possimus et aspernatur a quibusdam accusamus inventore voluptates rerum harum soluta, distinctio neque dignissimos!",
+    images: ["/projects/genxdb/logo.png"],
+  },
+];
 ---
 
 <Layout title="">
-  <main
-  id="home"
-  >
-    <div
-      class="flex justify-center items-center flex-col gap-4 pt-12"
-    >
+  <main id="home">
+    <div class="flex justify-center items-center flex-col gap-4 pt-12">
       <h1 class="text-6xl font-semibold flex items-center gap-4">
         <div>
-          Hey! Soy <span class="text-yellow-500">Fido</span>
+          Hey! Soy <span class="text-yellow-400">Fido</span>
         </div>
         <img
           src="/images/batman.png"
@@ -32,10 +65,10 @@ import Icon from "../components/Icon.astro";
       alt="bat"
       class="size-20 absolute rotate-12 -z-10"
     />
-    <div class="w-2/3 mx-auto mt-16 p-4 overflow-hidden">
-      <article
+    <div class="w-2/3 mx-auto overflow-hidden">
+      <section
         id="icons"
-        class="flex items-center justify-center mx-auto gap-4 -translate-x-[160%]"
+        class="flex items-center justify-center mx-auto mt-16 gap-4 -translate-x-[160%]"
       >
         <Icon name="nginx" svg="/icons/nginx.svg" />
         <Icon name="docker" svg="/icons/docker.svg" />
@@ -54,19 +87,19 @@ import Icon from "../components/Icon.astro";
         <Icon name="tailwind" svg="/icons/tailwind.svg" />
         <Icon name="css" svg="/icons/css.svg" />
         <Icon name="html" svg="/icons/html.svg" />
-      </article>
-      <section id="projects">
-        <h2>Proyectos</h2>
-        <article class="p4 w-2/3 mx-auto">
-          <h3 class="text-xl text-yellow-400 font-thin">HealthTech</h3>
-          <img src="/projects/healthtech.png" alt="healthtech" />
-          <p class="text-sm font-thin">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            enim facere libero necessitatibus, temporibus, similique suscipit
-            aut eveniet nesciunt obcaecati molestias asperiores non illo
-            aspernatur veniam fugit unde, quas et!
-          </p>
-        </article>
+      </section>
+      <section id="projects" class="mt-16 p4 w-[72%] mx-auto">
+        <h2 class="text-3xl mb-4">Proyectos</h2>
+        {
+          projects.map((project) => (
+            <Project
+              title={project.title}
+              subtitle={project.subtitle}
+              description={project.description}
+              images={project.images}
+            />
+          ))
+        }
       </section>
     </div>
   </main>
@@ -91,7 +124,11 @@ import Icon from "../components/Icon.astro";
     animation-play-state: paused;
   }
 
-  #icons img:hover {
+  @keyframes code {
+    to {
+      opacity: 1;
+      transform: translateY(100px);
+    }
   }
 
   @keyframes title {
@@ -120,3 +157,12 @@ import Icon from "../components/Icon.astro";
     animation: title 1s ease-out 1s both;
   }
 </style>
+
+<script>
+  const fade = document.getElementById("fade");
+  const image = document.getElementsByClassName("img-proy")[0];
+
+  image.addEventListener("hover", () => {
+    fade?.classList.add("opacity-60");
+  });
+</script>

@@ -1,0 +1,75 @@
+---
+const { title, subtitle, description, images } = Astro.props;
+---
+
+<article class="mb-12">
+  <h3 class="text-xl text-yellow-400">{title}</h3>
+  <h4 class="text-sm font-thin text-gray-200 py-1">
+    {subtitle}
+  </h4>
+  <div class="overflow-hidden">
+    {
+      images.length > 1 ? (
+        <div id="carousel" class="flex items-center -translate-x-full">
+          {images.map((image: string) => (
+            <div class="overflow-hidden min-w-full h-60">
+              <img
+                src={image}
+                alt={title.toLowerCase()}
+                class="img-proy w-full h-full"
+              />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <img
+          src={images[0]}
+          alt={title.toLowerCase()}
+          class="img-proy w-full h-full"
+        />
+      )
+    }
+  </div>
+  <p class="text-sm font-thin text-center">
+    {description}
+  </p>
+</article>
+
+<style>
+  .img-proy {
+    transition:
+      transform 1s ease-out,
+      opacity 0.5s ease-out;
+  }
+
+  .img-proy:hover {
+    transform: translate(-80px, 50px) scale(1.8);
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  #carousel {
+    animation: carousel 40s linear infinite both;
+  }
+
+  @keyframes carousel {
+    0% {
+      transform: translateX(0%);
+    }
+    20% {
+      transform: translateX(-100%);
+    }
+    40% {
+      transform: translateX(-200%);
+    }
+    60% {
+      transform: translateX(-300%);
+    }
+    80% {
+      transform: translateX(-400%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+</style>
