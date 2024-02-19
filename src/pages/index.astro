@@ -41,8 +41,8 @@ const projects = [
 ];
 ---
 
-<Layout title="">
-  <main id="home">
+<Layout title="Fido - Porfolio">
+  <main id="home relative">
     <div class="flex justify-center items-center flex-col gap-4 pt-12">
       <h1 class="text-6xl font-semibold flex items-center gap-4">
         <div>
@@ -60,11 +60,6 @@ const projects = [
         de software de calidad con diferentes tecnologias.
       </p>
     </div>
-    <img
-      src="/images/logo.svg"
-      alt="bat"
-      class="size-20 absolute rotate-12 -z-10"
-    />
     <div class="w-2/3 mx-auto overflow-hidden">
       <section
         id="icons"
@@ -102,6 +97,15 @@ const projects = [
         }
       </section>
     </div>
+    {
+      [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map(() => (
+        <img
+          src="/images/logo.svg"
+          alt="bat"
+          class={`bats size-20 absolute top-0 rotate-12 -z-10`}
+        />
+      ))
+    }
   </main>
 </Layout>
 
@@ -159,10 +163,50 @@ const projects = [
 </style>
 
 <script>
-  const fade = document.getElementById("fade");
-  const image = document.getElementsByClassName("img-proy")[0];
+  const bats = document.getElementsByClassName(
+    "bats"
+  ) as HTMLCollectionOf<HTMLElement>;
+  window.onload = () => {
+    for (let i = 0; i < bats.length; i++) {
+      let left;
+      if (window.screen.width > 1000) {
+        left = `${Math.round((Math.random() * window.screen.width) / 1.2)}px`;
+      } else {
+        left = `${Math.round((Math.random() * window.screen.width) / 1.2)}px`;
+      }
 
-  image.addEventListener("hover", () => {
-    fade?.classList.add("opacity-60");
-  });
+      let top;
+      if (window.screen.width < 1000) {
+        top = `${Math.round(Math.random() * window.screen.width * 6)}px`;
+      } else {
+        top = `${Math.round(Math.random() * window.screen.width)}px`;
+      }
+
+      bats[i].style.left = left.toString();
+      bats[i].style.top = top.toString();
+      bats[i].style.transform = `rotate(${Math.round(Math.random() * 100)}deg)`;
+    }
+  };
+
+  window.onresize = () => {
+    for (let i = 0; i < bats.length; i++) {
+      let left;
+      if (window.screen.width > 1000) {
+        left = `${Math.round((Math.random() * window.screen.width) / 1.2)}px`;
+      } else {
+        left = `${Math.round((Math.random() * window.screen.width) / 2)}px`;
+      }
+
+      let top;
+      if (window.screen.width < 1000) {
+        top = `${Math.round(Math.random() * window.screen.width * 6)}px`;
+      } else {
+        top = `${Math.round(Math.random() * window.screen.width)}px`;
+      }
+
+      bats[i].style.left = left.toString();
+      bats[i].style.top = top.toString();
+      bats[i].style.transform = `rotate(${Math.round(Math.random() * 100)}deg)`;
+    }
+  };
 </script>
