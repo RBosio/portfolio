@@ -97,15 +97,11 @@ const projects = [
         }
       </section>
     </div>
-    {
-      [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map(() => (
-        <img
-          src="/images/logo.svg"
-          alt="bat"
-          class={`bats size-20 absolute top-0 rotate-12 -z-10`}
-        />
-      ))
-    }
+    <img
+      src="/images/logo.svg"
+      alt="bat"
+      class={`bats size-80 absolute -top-10 left-10 rotate-12 -z-10`}
+    />
   </main>
 </Layout>
 
@@ -161,52 +157,3 @@ const projects = [
     animation: title 1s ease-out 1s both;
   }
 </style>
-
-<script>
-  const bats = document.getElementsByClassName(
-    "bats"
-  ) as HTMLCollectionOf<HTMLElement>;
-  window.onload = () => {
-    for (let i = 0; i < bats.length; i++) {
-      let left;
-      if (window.screen.width > 1000) {
-        left = `${Math.round((Math.random() * window.screen.width) / 1.2)}px`;
-      } else {
-        left = `${Math.round((Math.random() * window.screen.width) / 1.2)}px`;
-      }
-
-      let top;
-      if (window.screen.width < 1000) {
-        top = `${Math.round(Math.random() * window.screen.width * 6)}px`;
-      } else {
-        top = `${Math.round(Math.random() * window.screen.width)}px`;
-      }
-
-      bats[i].style.left = left.toString();
-      bats[i].style.top = top.toString();
-      bats[i].style.transform = `rotate(${Math.round(Math.random() * 100)}deg)`;
-    }
-  };
-
-  window.onresize = () => {
-    for (let i = 0; i < bats.length; i++) {
-      let left;
-      if (window.screen.width > 1000) {
-        left = `${Math.round((Math.random() * window.screen.width) / 1.2)}px`;
-      } else {
-        left = `${Math.round((Math.random() * window.screen.width) / 2)}px`;
-      }
-
-      let top;
-      if (window.screen.width < 1000) {
-        top = `${Math.round(Math.random() * window.screen.width * 6)}px`;
-      } else {
-        top = `${Math.round(Math.random() * window.screen.width)}px`;
-      }
-
-      bats[i].style.left = left.toString();
-      bats[i].style.top = top.toString();
-      bats[i].style.transform = `rotate(${Math.round(Math.random() * 100)}deg)`;
-    }
-  };
-</script>
