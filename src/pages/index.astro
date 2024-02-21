@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 
 import Icon from "../components/Icon.astro";
 import Project from "../components/Project.astro";
+import Badget from "../components/Badget.astro";
 
 const projects = [
   {
@@ -42,7 +43,7 @@ const projects = [
 ---
 
 <Layout title="Fido - Porfolio">
-  <main id="home relative">
+  <main id="home" class="relative">
     <div class="flex justify-center items-center flex-col gap-4 pt-12">
       <h1 class="text-6xl font-semibold flex items-center gap-4">
         <div>
@@ -59,11 +60,28 @@ const projects = [
         en el desarrollo web fullstack. +4 años de experiencia realizando proyectos
         de software de calidad con diferentes tecnologias.
       </p>
+      <section id="badget" class="flex items-center gap-4 mt-4">
+        <Badget
+          name="Linkedin"
+          svg="/icons/linkedin.svg"
+          url="https://www.linkedin.com/in/rbosio7"
+        />
+        <Badget
+          name="Github"
+          svg="/icons/github.svg"
+          url="https://www.github.com/RBosio"
+        />
+        <Badget
+          name="npm"
+          svg="/icons/npm.svg"
+          url="https://www.npmjs.com/~fiido"
+        />
+      </section>
     </div>
     <div class="w-2/3 mx-auto overflow-hidden">
       <section
         id="icons"
-        class="flex items-center justify-center mx-auto mt-16 gap-4 -translate-x-[160%]"
+        class="flex items-center justify-center mx-auto mt-24 gap-4 -translate-x-[160%]"
       >
         <Icon name="nginx" svg="/icons/nginx.svg" />
         <Icon name="docker" svg="/icons/docker.svg" />
@@ -83,8 +101,8 @@ const projects = [
         <Icon name="css" svg="/icons/css.svg" />
         <Icon name="html" svg="/icons/html.svg" />
       </section>
-      <section id="projects" class="mt-16 p4 w-[72%] mx-auto">
-        <h2 class="text-3xl mb-4">Proyectos</h2>
+      <section id="projects" class="p4 w-[72%] mx-auto">
+        <h2 class="text-3xl mb-4 pt-24">Proyectos</h2>
         {
           projects.map((project) => (
             <Project
@@ -100,7 +118,7 @@ const projects = [
     <img
       src="/images/logo.svg"
       alt="bat"
-      class={`bats size-80 absolute -top-10 left-10 rotate-12 -z-10`}
+      class={`bats size-60 absolute -top-20 -left-20 rotate-12 -z-10`}
     />
   </main>
 </Layout>
@@ -155,5 +173,9 @@ const projects = [
 
   #sub {
     animation: title 1s ease-out 1s both;
+  }
+
+  #badget {
+    animation: title 1s ease-out 2s both;
   }
 </style>
