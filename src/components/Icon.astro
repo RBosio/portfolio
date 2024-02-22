@@ -2,4 +2,53 @@
 const { name, svg } = Astro.props;
 ---
 
-<img src={svg} alt={name} class="size-12" />
+<div
+  id={name}
+  class="iconsd min-w-12 flex flex-col justify-center items-center relative"
+>
+  <img id={name} src={svg} alt={name} class="size-12" />
+  <p
+    class="name text-xs text-gray-200 absolute -bottom-8 hidden border border-white p-1 rounded-md"
+  >
+    {name}
+  </p>
+</div>
+
+<style>
+  .name {
+    animation: name 0.6s linear infinite alternate;
+  }
+
+  @keyframes name {
+    100% {
+      bottom: -42px;
+    }
+  }
+</style>
+
+<script>
+  const div = Array.from(document.getElementsByClassName("iconsd"));
+  const icons = Array.from(document.getElementsByClassName("name"));
+
+  div.map((d, idx: number) => {
+    const divId = d.attributes.getNamedItem("id")?.value;
+
+    d.addEventListener("mouseover", () => {
+      for (let item of div) {
+        if (divId === item.attributes.getNamedItem("id")?.value) {
+          const icon = icons.filter((_, index: number) => index === idx);
+          icon[0].classList.remove("hidden");
+        }
+      }
+    });
+
+    d.addEventListener("mouseout", () => {
+      for (let item of div) {
+        if (divId === item.attributes.getNamedItem("id")?.value) {
+          const icon = icons.filter((_, index: number) => index === idx);
+          icon[0].classList.add("hidden");
+        }
+      }
+    });
+  });
+</script>
