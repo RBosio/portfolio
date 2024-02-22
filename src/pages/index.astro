@@ -4,42 +4,8 @@ import Layout from "../layouts/Layout.astro";
 import Icon from "../components/Icon.astro";
 import Project from "../components/Project.astro";
 import Badget from "../components/Badget.astro";
-
-const projects = [
-  {
-    title: "HealthTech",
-    subtitle: "Consultoria medica online",
-    description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus veritatis doloribus suscipit reprehenderit illo eius optio possimus et aspernatur a quibusdam accusamus inventore voluptates rerum harum soluta, distinctio neque dignissimos!",
-    images: [
-      "/projects/healthtech/login.png",
-      "/projects/healthtech/config.png",
-      "/projects/healthtech/doctors.png",
-      "/projects/healthtech/meetings.png",
-      "/projects/healthtech/videocall.png",
-    ],
-  },
-  {
-    title: "Hotelmar",
-    subtitle: "Reservas de habitaciones para un hotel",
-    description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus veritatis doloribus suscipit reprehenderit illo eius optio possimus et aspernatur a quibusdam accusamus inventore voluptates rerum harum soluta, distinctio neque dignissimos!",
-    images: [
-      "/projects/hotelmar/home.png",
-      "/projects/hotelmar/booking.png",
-      "/projects/hotelmar/extras.png",
-      "/projects/hotelmar/detail.png",
-      "/projects/hotelmar/my-bookings.png",
-    ],
-  },
-  {
-    title: "GenXDB",
-    subtitle: "Generador de codigo para ORMs",
-    description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus veritatis doloribus suscipit reprehenderit illo eius optio possimus et aspernatur a quibusdam accusamus inventore voluptates rerum harum soluta, distinctio neque dignissimos!",
-    images: ["/projects/genxdb/logo.png"],
-  },
-];
+import { projects } from "../data/projects";
+import { certificates } from "../data/certificates";
 ---
 
 <Layout title="Fido - Porfolio">
@@ -81,7 +47,7 @@ const projects = [
     <div id="skills" class="w-2/3 mx-auto overflow-hidden">
       <section
         id="icons"
-        class="flex items-center justify-center mx-auto mt-24 gap-4 -translate-x-[160%]"
+        class="flex items-center justify-center mx-auto mt-24 gap-4 mb-12 -translate-x-[160%]"
       >
         <Icon name="Nginx" svg="/icons/nginx.svg" />
         <Icon name="Docker" svg="/icons/docker.svg" />
@@ -101,8 +67,10 @@ const projects = [
         <Icon name="CSS" svg="/icons/css.svg" />
         <Icon name="HTML" svg="/icons/html.svg" />
       </section>
-      <section id="projects" class="p4 w-[72%] mx-auto">
-        <h2 class="flex items-center gap-2 text-3xl mb-4 pt-24">
+    </div>
+    <section class="w-2/3 mx-auto">
+      <article id="projects" class="w-[72%] mx-auto">
+        <h2 class="flex items-center gap-2 text-2xl mb-4 pt-14">
           <img src="/icons/code.svg" alt="code" class="size-6" /> Proyectos
         </h2>
         {
@@ -115,14 +83,69 @@ const projects = [
             />
           ))
         }
-      </section>
-    </div>
-    <img
-      src="/images/logo.svg"
-      alt="bat"
-      class={`bats size-60 absolute -top-20 -left-20 rotate-12 -z-10`}
-    />
+      </article>
+      <article id="certifications" class="w-[72%] mx-auto">
+        <h2 class="flex items-center gap-2 text-2xl mb-4 pt-14">
+          <img src="/icons/code.svg" alt="code" class="size-6" /> Certificaciones
+        </h2>
+        <div class="overflow-hidden relative">
+          <img
+            id="left"
+            src="/icons/left.svg"
+            alt="left"
+            class="size-14 absolute top-[calc(50%-30px)] left-0 z-20 p-1 hover:cursor-pointer hover:opacity-70"
+          />
+          <img
+            id="right"
+            src="/icons/right.svg"
+            alt="right"
+            class="size-14 absolute top-[calc(50%-30px)] right-0 z-20 p-1 hover:cursor-pointer hover:opacity-70"
+          />
+          <div
+            id="carouselCerts"
+            class="w-full flex transition ease-out duration-[.8s]"
+          >
+            {
+              certificates.map((cert) => (
+                <div class="min-w-full flex flex-col items-center">
+                  <div>
+                    <h3 class="text-xl text-yellow-400">{cert.title}</h3>
+                  </div>
+                    <img
+                    src=`${cert.image}`
+                    alt="js"
+                    class="w-3/4 mx-auto my-2"
+                  />
+                  <p class="text-sm font-thin text-center text-white px-4">
+                    {cert.description}
+                    </p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </article>
+    </section>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor qui ea id temporibus
+    distinctio accusamus ullam! Facilis rerum aliquam impedit, aspernatur officia
+    laborum corrupti explicabo nam quae, amet vitae blanditiis dolorem sed ad facere
+    iste in consequuntur? Aut, nisi debitis fuga itaque nesciunt unde esse nulla
+    culpa? Dolorum vel modi commodi, eaque accusamus laborum, unde hic maiores veniam
+    illo culpa voluptatibus enim itaque in? Ea repudiandae voluptatibus nihil adipisci,
+    eos nulla illo delectus, corporis beatae cum obcaecati magnam quaerat. Assumenda
+    harum fugit saepe tempora repudiandae minima asperiores aspernatur, in eos alias
+    quos a, incidunt repellendus, quidem itaque voluptatum atque enim unde. Vel maxime
+    doloremque natus ab, ut quae neque at eos optio amet, nostrum, nesciunt est.
+    Deserunt fuga iusto fugiat. Inventore, eligendi ratione consequuntur tempora
+    voluptatibus corrupti libero dignissimos veniam voluptatem ducimus quaerat quia
+    eveniet asperiores esse nam eaque doloremque incidunt! Ab, voluptates? Expedita
+    laborum optio cumque consequuntur veniam necessitatibus!
   </main>
+  <img
+    src="/images/logo.svg"
+    alt="bat"
+    class={`bats size-60 absolute -top-20 -left-20 rotate-12 -z-10`}
+  />
 </Layout>
 
 <style>
@@ -181,3 +204,24 @@ const projects = [
     animation: title 1s ease-out 2s both;
   }
 </style>
+
+<script>
+  const left = document.getElementById("left");
+  const right = document.getElementById("right");
+  const carouselCerts = document.getElementById("carouselCerts");
+  let count = 0;
+
+  left?.addEventListener("click", () => {
+    if (count > 0 && carouselCerts) {
+      carouselCerts.style.transform = `translateX(${(count - 1) * -100}%)`;
+      count--;
+    }
+  });
+
+  right?.addEventListener("click", () => {
+    if (count < 2 && carouselCerts) {
+      carouselCerts.style.transform = `translateX(${(count + 1) * -100}%)`;
+      count++;
+    }
+  });
+</script>
