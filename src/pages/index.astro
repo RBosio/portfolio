@@ -3,7 +3,8 @@ import Layout from "../layouts/Layout.astro";
 
 import Icon from "../components/Icon.astro";
 import Project from "../components/Project.astro";
-import Badget from "../components/Badget.astro";
+import Badge from "../components/Badge.astro";
+
 import { projects } from "../data/projects";
 import { certificates } from "../data/certificates";
 ---
@@ -21,23 +22,32 @@ import { certificates } from "../data/certificates";
           class="object-cover w-16 h-30"
         />
       </h1>
-      <p id="sub" class="text-center text-xl">
-        <span class="text-yellow-300">Ingeniero en sistemas</span> especializado
-        en el desarrollo web fullstack. +4 años de experiencia realizando proyectos
-        de software de calidad con diferentes tecnologias.
-      </p>
-      <section id="badget" class="flex items-center gap-4 mt-4">
-        <Badget
+      <div id="sub">
+        <p class="text-center text-xl">
+          <span class="text-yellow-300">Ingeniero en sistemas</span> especializado
+          en el desarrollo web fullstack. +4 años de experiencia realizando proyectos
+          de software de calidad con diferentes tecnologias.
+        </p>
+        <div class="flex justify-center my-2">
+        </div>
+      </div>
+      <section id="badge" class="flex items-center gap-4 mt-4">
+        <Badge
+        name="Descargar cv"
+        svg="/icons/cv.svg"
+        url="https://www.linkedin.com/in/rbosio7"
+        />
+        <Badge
           name="Linkedin"
           svg="/icons/linkedin.svg"
           url="https://www.linkedin.com/in/rbosio7"
         />
-        <Badget
+        <Badge
           name="Github"
           svg="/icons/github.svg"
           url="https://www.github.com/RBosio"
         />
-        <Badget
+        <Badge
           name="npm"
           svg="/icons/npm.svg"
           url="https://www.npmjs.com/~fiido"
@@ -47,7 +57,7 @@ import { certificates } from "../data/certificates";
     <div id="skills" class="w-2/3 mx-auto overflow-hidden">
       <section
         id="icons"
-        class="flex items-center justify-center mx-auto mt-24 gap-4 mb-12 -translate-x-[160%]"
+        class="flex items-center justify-center mx-auto mt-16 mb-12 gap-4 -translate-x-[160%]"
       >
         <Icon name="Nginx" svg="/icons/nginx.svg" />
         <Icon name="Docker" svg="/icons/docker.svg" />
@@ -68,11 +78,12 @@ import { certificates } from "../data/certificates";
         <Icon name="HTML" svg="/icons/html.svg" />
       </section>
     </div>
-    <section class="w-2/3 mx-auto">
+    <section class="w-2/3 mx-auto flex flex-col">
       <article id="projects" class="w-[72%] mx-auto">
-        <h2 class="flex items-center gap-2 text-2xl mb-4 pt-14">
+        <h2 class="flex items-center gap-2 text-2xl mb-4 pt-20">
           <img src="/icons/code.svg" alt="code" class="size-6" /> Proyectos
         </h2>
+        <div class="flex flex-col gap-12">
         {
           projects.map((project) => (
             <Project
@@ -83,10 +94,11 @@ import { certificates } from "../data/certificates";
             />
           ))
         }
+        </div>
       </article>
       <article id="certifications" class="w-[72%] mx-auto">
-        <h2 class="flex items-center gap-2 text-2xl mb-4 pt-14">
-          <img src="/icons/code.svg" alt="code" class="size-6" /> Certificaciones
+        <h2 class="flex items-center gap-2 text-2xl mb-4 pt-24">
+          <img src="/icons/certificate.svg" alt="certificate" class="size-6" /> Certificaciones
         </h2>
         <div class="overflow-hidden relative">
           <img
@@ -125,26 +137,17 @@ import { certificates } from "../data/certificates";
           </div>
         </div>
       </article>
+      <article id="about" class="w-[72%] mx-auto">
+        <h2 class="flex items-center gap-2 text-2xl mb-4 pt-24">
+          <img src="/icons/atom.svg" alt="atom" class="size-6" /> Sobre mi
+        </h2>
+      </article>
     </section>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor qui ea id temporibus
-    distinctio accusamus ullam! Facilis rerum aliquam impedit, aspernatur officia
-    laborum corrupti explicabo nam quae, amet vitae blanditiis dolorem sed ad facere
-    iste in consequuntur? Aut, nisi debitis fuga itaque nesciunt unde esse nulla
-    culpa? Dolorum vel modi commodi, eaque accusamus laborum, unde hic maiores veniam
-    illo culpa voluptatibus enim itaque in? Ea repudiandae voluptatibus nihil adipisci,
-    eos nulla illo delectus, corporis beatae cum obcaecati magnam quaerat. Assumenda
-    harum fugit saepe tempora repudiandae minima asperiores aspernatur, in eos alias
-    quos a, incidunt repellendus, quidem itaque voluptatum atque enim unde. Vel maxime
-    doloremque natus ab, ut quae neque at eos optio amet, nostrum, nesciunt est.
-    Deserunt fuga iusto fugiat. Inventore, eligendi ratione consequuntur tempora
-    voluptatibus corrupti libero dignissimos veniam voluptatem ducimus quaerat quia
-    eveniet asperiores esse nam eaque doloremque incidunt! Ab, voluptates? Expedita
-    laborum optio cumque consequuntur veniam necessitatibus!
   </main>
   <img
     src="/images/logo.svg"
     alt="bat"
-    class={`bats size-60 absolute -top-20 -left-20 rotate-12 -z-10`}
+    class={`bats size-60 absolute top-0 left-20 rotate-12 -z-10`}
   />
 </Layout>
 
@@ -165,13 +168,6 @@ import { certificates } from "../data/certificates";
 
   #icons:hover {
     animation-play-state: paused;
-  }
-
-  @keyframes code {
-    to {
-      opacity: 1;
-      transform: translateY(100px);
-    }
   }
 
   @keyframes title {
@@ -200,13 +196,14 @@ import { certificates } from "../data/certificates";
     animation: title 1s ease-out 1s both;
   }
 
-  #badget {
+  #badge {
     animation: title 1s ease-out 2s both;
   }
 </style>
 
 <script>
   const left = document.getElementById("left");
+import { certificates } from "../data/certificates";
   const right = document.getElementById("right");
   const carouselCerts = document.getElementById("carouselCerts");
   let count = 0;
@@ -219,7 +216,7 @@ import { certificates } from "../data/certificates";
   });
 
   right?.addEventListener("click", () => {
-    if (count < 2 && carouselCerts) {
+    if (count < (certificates.length - 1) && carouselCerts) {
       carouselCerts.style.transform = `translateX(${(count + 1) * -100}%)`;
       count++;
     }
