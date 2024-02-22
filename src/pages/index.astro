@@ -78,7 +78,7 @@ const projects = [
         />
       </section>
     </div>
-    <div class="w-2/3 mx-auto overflow-hidden">
+    <div id="skills" class="w-2/3 mx-auto overflow-hidden">
       <section
         id="icons"
         class="flex items-center justify-center mx-auto mt-24 gap-4 -translate-x-[160%]"
@@ -102,7 +102,9 @@ const projects = [
         <Icon name="HTML" svg="/icons/html.svg" />
       </section>
       <section id="projects" class="p4 w-[72%] mx-auto">
-        <h2 class="text-3xl mb-4 pt-24">Proyectos</h2>
+        <h2 class="flex items-center gap-2 text-3xl mb-4 pt-24">
+          <img src="/icons/code.svg" alt="code" class="size-6" /> Proyectos
+        </h2>
         {
           projects.map((project) => (
             <Project

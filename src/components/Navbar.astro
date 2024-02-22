@@ -1,16 +1,29 @@
 <nav class="sticky top-0 z-10">
-  <ul class="flex justify-center items-center text-white gap-12 text-lg">
-    <li class="p-2 hover:cursor-pointer hover:underline">
-      <a href="#home">Inicio</a>
+  <ul class="flex justify-center items-center text-white gap-12 text-lg p-2">
+    <li>
+      <a class="p-2 hover:cursor-pointer hover:underline" id="home" href="#"
+        >Inicio</a
+      >
     </li>
-    <li class="p-2 hover:cursor-pointer hover:underline">
-      <a href="#about">Sobre mi</a>
+    <li>
+      <a class="p-2 hover:cursor-pointer hover:underline" href="#skills"
+        >Skills</a
+      >
     </li>
-    <li class="p-2 hover:cursor-pointer hover:underline">
-      <a href="#projects">Proyectos</a>
+    <li>
+      <a class="p-2 hover:cursor-pointer hover:underline" href="#projects"
+        >Proyectos</a
+      >
     </li>
-    <li class="p-2 hover:cursor-pointer hover:underline" #contact>
-      <a href="#contact">Contacto</a>
+    <li>
+      <a class="p-2 hover:cursor-pointer hover:underline" href="#projects"
+        >Certificaciones</a
+      >
+    </li>
+    <li>
+      <a class="p-2 hover:cursor-pointer hover:underline" href="#about"
+        >Sobre mi</a
+      >
     </li>
   </ul>
   <div class="progress bg-yellow-400 h-2"></div>
@@ -46,3 +59,12 @@
     animation-range: 0 100px;
   }
 </style>
+
+<script>
+  const home = document.getElementById("home");
+
+  home?.addEventListener("click", () => {
+    document.body.scrollTop = 0; // Safari
+    document.documentElement.scrollTop = 0; // Chrome, Firefox, IE and Opera
+  });
+</script>
