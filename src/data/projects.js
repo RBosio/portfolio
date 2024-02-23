@@ -95,9 +95,9 @@ export const projects = [
   },
   {
     title: "GenXDB",
-    subtitle: "Generador de codigo para ORMs",
+    subtitle: "Generador de código para ORMs",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus veritatis doloribus suscipit reprehenderit illo eius optio possimus et aspernatur a quibusdam accusamus inventore voluptates rerum harum soluta, distinctio neque dignissimos!",
+      "GenXDB es una interfaz de linea de comandos que permite generar código que se utiliza para diseñar y generar modelos en diferentes ORMs fácil y rápidamente usando el formato json",
     images: ["/projects/genxdb/logo.png"],
     tech: [
       {
