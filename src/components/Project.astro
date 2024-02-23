@@ -1,10 +1,12 @@
 ---
-const { title, subtitle, description, images } = Astro.props;
+const { title, subtitle, description, images, tech } = Astro.props;
+
+import Badge from "./Badge.astro";
 ---
 
 <article>
   <h3 class="text-xl text-yellow-400">{title}</h3>
-  <h4 class="text-sm font-thin text-gray-200 py-1">
+  <h4 class="text-sm text-gray-400 my-1">
     {subtitle}
   </h4>
   <div class="overflow-hidden">
@@ -30,7 +32,10 @@ const { title, subtitle, description, images } = Astro.props;
       )
     }
   </div>
-  <p class="text-sm font-thin text-center text-white">
+  <div class="flex justify-center items-center flex-wrap gap-2 my-1">
+    {tech.map((t: any) => <Badge name={t.name} svg={t.svg} />)}
+  </div>
+  <p class="text-sm text-center text-white">
     {description}
   </p>
 </article>

@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 
 import Icon from "../components/Icon.astro";
 import Project from "../components/Project.astro";
-import Badge from "../components/Badge.astro";
+import Button from "../components/Button.astro";
 
 import { projects } from "../data/projects";
 import { certificates } from "../data/certificates";
@@ -32,22 +32,26 @@ import { certificates } from "../data/certificates";
         </div>
       </div>
       <section id="badge" class="flex items-center gap-4 mt-4">
-        <Badge
+        <Button
+      
         name="Descargar cv"
         svg="/icons/cv.svg"
         url="https://www.linkedin.com/in/rbosio7"
         />
-        <Badge
+        <Button
+      
           name="Linkedin"
           svg="/icons/linkedin.svg"
           url="https://www.linkedin.com/in/rbosio7"
         />
-        <Badge
+        <Button
+      
           name="Github"
           svg="/icons/github.svg"
           url="https://www.github.com/RBosio"
         />
-        <Badge
+        <Button
+      
           name="npm"
           svg="/icons/npm.svg"
           url="https://www.npmjs.com/~fiido"
@@ -62,9 +66,11 @@ import { certificates } from "../data/certificates";
         <Icon name="Nginx" svg="/icons/nginx.svg" />
         <Icon name="Docker" svg="/icons/docker.svg" />
         <Icon name="Linux" svg="/icons/linux.svg" />
+        <Icon name="JWT" svg="/icons/jwt.svg" />
         <Icon name="GraphQL" svg="/icons/graphql.svg" />
         <Icon name="PostgreSQL" svg="/icons/postgresql.svg" />
         <Icon name="MySQL" svg="/icons/mysql.svg" />
+        <Icon name="TypeORM" svg="/icons/typeorm.svg" />
         <Icon name="NestJS" svg="/icons/nestjs.svg" />
         <Icon name="Express" svg="/icons/express.svg" />
         <Icon name="NodeJS" svg="/icons/nodejs.svg" />
@@ -91,6 +97,7 @@ import { certificates } from "../data/certificates";
               subtitle={project.subtitle}
               description={project.description}
               images={project.images}
+              tech={project.tech}
             />
           ))
         }

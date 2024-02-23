@@ -1,12 +1,10 @@
 ---
-const { name, svg, url } = Astro.props;
+const { name, svg } = Astro.props;
 ---
 
-<a
-  class="p-2 bg-slate-200 rounded-md flex justify-center items-center gap-1 hover:cursor-pointer hover:opacity-70 hover:scale-110 transition duration-200"
-  href={url}
-  target="_blank"
+<div
+  class="p-2 border border-slate-200 rounded-md flex justify-center items-center gap-1"
 >
   <img src={svg} alt={name} class="size-4" />
-  <p class="text-sm text-black">{name}</p>
-</a>
+  <p class="text-xs text-white">{name}</p>
+</div>
