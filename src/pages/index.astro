@@ -5,6 +5,7 @@ import Icon from "../components/Icon.astro";
 import Project from "../components/Project.astro";
 import Certificate from "../components/Certificate.astro";
 import Button from "../components/Button.astro";
+import About from "../components/About.astro";
 
 import { projects } from "../data/projects";
 import { certificates } from "../data/certificates";
@@ -82,7 +83,7 @@ import { certificates } from "../data/certificates";
       </section>
     </div>
     <section class="w-2/3 mx-auto flex flex-col">
-      <article id="projects" class="w-[72%] mx-auto">
+      <article id="projects" class="mx-auto">
         <h2 class="flex items-center gap-2 text-2xl mb-4 pt-20">
           <img src="/icons/code.svg" alt="code" class="size-6" /> Proyectos
         </h2>
@@ -101,7 +102,7 @@ import { certificates } from "../data/certificates";
           }
         </div>
       </article>
-      <article id="certifications" class="w-[72%] mx-auto">
+      <article id="certifications" class="mx-auto">
         <h2 class="flex items-center gap-2 text-2xl mb-4 pt-24">
           <img src="/icons/certificate.svg" alt="certificate" class="size-6" /> Certificaciones
         </h2>
@@ -135,10 +136,11 @@ import { certificates } from "../data/certificates";
           </div>
         </div>
       </article>
-      <article id="about" class="w-[72%] mx-auto">
+      <article id="about" class=" mx-auto">
         <h2 class="flex items-center gap-2 text-2xl mb-4 pt-24">
           <img src="/icons/atom.svg" alt="atom" class="size-6" /> Sobre mí
         </h2>
+        <About />
       </article>
     </section>
   </main>
