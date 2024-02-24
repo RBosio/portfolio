@@ -3,7 +3,7 @@ export const projects = [
     title: "HealthTech",
     subtitle: "Consultoria medica online",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus veritatis doloribus suscipit reprehenderit illo eius optio possimus et aspernatur a quibusdam accusamus inventore voluptates rerum harum soluta, distinctio neque dignissimos!",
+      "Aplicación que permite realizar consultas médicas de manera remota a profesionales de la salud en todos los ámbitos a lo largo y ancho del país.",
     images: [
       "/projects/healthtech/login.png",
       "/projects/healthtech/config.png",
@@ -49,12 +49,13 @@ export const projects = [
         svg: "/icons/zoom.svg",
       },
     ],
+    url: "https://github.com/RBosio/consultoria-medica-online",
   },
   {
     title: "Hotelmar",
     subtitle: "Sistema de hoteleria",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus veritatis doloribus suscipit reprehenderit illo eius optio possimus et aspernatur a quibusdam accusamus inventore voluptates rerum harum soluta, distinctio neque dignissimos!",
+      "Hotelmar es un sistema desarrollado para la realización de reservas y administración total de un hotel ficticio. El mismo cuenta con todos los CRUDs correspondientes que hacen al negocio del mismo.",
     images: [
       "/projects/hotelmar/home.png",
       "/projects/hotelmar/booking.png",
@@ -92,12 +93,13 @@ export const projects = [
         svg: "/icons/mysql.svg",
       },
     ],
+    url: "https://github.com/RBosio/hotelmar",
   },
   {
     title: "GenXDB",
     subtitle: "Generador de código para ORMs",
     description:
-      "GenXDB es una interfaz de linea de comandos que permite generar código que se utiliza para diseñar y generar modelos en diferentes ORMs fácil y rápidamente usando el formato json",
+      "GenXDB es una interfaz de linea de comandos que permite generar código que se utiliza para diseñar y crear modelos en diferentes ORMs fácil y rápidamente usando el formato json.",
     images: ["/projects/genxdb/logo.png"],
     tech: [
       {
@@ -109,5 +111,6 @@ export const projects = [
         svg: "/icons/npm.svg",
       },
     ],
+    url: "https://github.com/RBosio/genxdb",
   },
 ];

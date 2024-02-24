@@ -1,7 +1,8 @@
 ---
-const { title, subtitle, description, images, tech } = Astro.props;
+const { title, subtitle, description, images, tech, url } = Astro.props;
 
 import Badge from "./Badge.astro";
+import Button from "./Button.astro";
 ---
 
 <article>
@@ -38,6 +39,9 @@ import Badge from "./Badge.astro";
   <p class="text-sm text-center text-white">
     {description}
   </p>
+  <div class="flex justify-center mt-2">
+    <Button name="Código" svg="/icons/github.svg" url={url} />
+  </div>
 </article>
 
 <style>
