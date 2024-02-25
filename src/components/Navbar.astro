@@ -1,5 +1,10 @@
-<nav class="sticky top-0 z-10">
-  <ul class="flex justify-center items-center text-white gap-12 text-lg p-2">
+<nav
+  id="navbar"
+  class="-translate-y-full fixed md:sticky top-0 z-10 w-full transition duration-200 ease-out"
+>
+  <ul
+    class="flex flex-col md:flex-row justify-center items-center text-white gap-12 text-lg p-2 bg-yellow-400/60 backdrop-blur-md md:bg-transparent md:backdrop-blur-none"
+  >
     <li>
       <a class="p-2 hover:cursor-pointer hover:underline" id="home" href="#"
         >Inicio</a
@@ -26,42 +31,53 @@
       >
     </li>
   </ul>
-  <div class="progress bg-yellow-400 h-2"></div>
 </nav>
+<img
+  id="menu"
+  src="/icons/menu.svg"
+  alt="menu"
+  class="fixed bottom-0 right-0 z-20 size-10 rounded-full m-2 p-2 bg-yellow-400/80 transition-all duration-200 md:hidden"
+/>
 
 <style>
-  @keyframes progress {
-    0% {
-      width: 0;
-    }
-    100% {
-      width: 100%;
-    }
-  }
-
   @keyframes navbar {
     100% {
-      background-color: rgba(150, 150, 0, 0.7);
+      background-color: rgb(250 204 21 / 0.6);
       color: white;
       backdrop-filter: blur(5px);
       font-size: 20px;
     }
   }
 
-  .progress {
-    animation: progress auto linear;
-    animation-timeline: scroll(root block);
-  }
-
-  ul {
-    animation: navbar auto linear both;
-    animation-timeline: scroll(root block);
-    animation-range: 0 100px;
+  @media (min-width: 80em) {
+    ul {
+      animation: navbar auto linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0 100px;
+    }
   }
 </style>
 
 <script>
   const home = document.getElementById("home");
+  const menu = document.getElementById("menu");
+  const navbar = document.getElementById("navbar");
+
+  menu?.addEventListener("click", () => {
+    navbar?.classList.toggle("-translate-y-full");
+    menu.classList.toggle("bg-black/90");
+    menu.classList.toggle("size-10");
+    menu.classList.toggle("size-12");
+    menu.classList.toggle("rotate-180");
+  });
+
+  navbar?.addEventListener("click", () => {
+    navbar.classList.toggle("-translate-y-full");
+    menu?.classList.toggle("bg-black/90");
+    menu?.classList.toggle("size-10");
+    menu?.classList.toggle("size-12");
+    menu?.classList.toggle("rotate-180");
+  });
 
   home?.addEventListener("click", () => {
     document.body.scrollTop = 0; // Safari

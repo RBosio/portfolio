@@ -15,7 +15,7 @@ import Button from "./Button.astro";
       images.length > 1 ? (
         <div id="carousel" class="flex items-center -translate-x-full">
           {images.map((image: string) => (
-            <div class="overflow-hidden min-w-full h-72 object-cover">
+            <div class="overflow-hidden min-w-full md:h-72 object-cover">
               <img
                 src={image}
                 alt={title.toLowerCase()}
@@ -28,7 +28,7 @@ import Button from "./Button.astro";
         <img
           src={images[0]}
           alt={title.toLowerCase()}
-          class="img-proy w-full h-72 object-cover"
+          class="img-proy w-full md:h-72 object-cover"
         />
       )
     }
