@@ -67,8 +67,29 @@ import { certificates } from "../data/certificates";
     <div id="skills" class="w-2/3 mx-auto overflow-hidden">
       <section
         id="icons"
-        class="flex items-center justify-center mx-auto mt-16 mb-12 gap-4 -translate-x-[360%] md:-translate-x-[160%]"
+        class="flex items-center justify-center mx-auto mt-16 mb-12 gap-4 -translate-x-[320px]"
       >
+        <Icon name="Nginx" svg="/icons/nginx.svg" />
+        <Icon name="Kubernetes" svg="/icons/kubernetes.svg" />
+        <Icon name="Docker" svg="/icons/docker.svg" />
+        <Icon name="Linux" svg="/icons/linux.svg" />
+        <Icon name="JWT" svg="/icons/jwt.svg" />
+        <Icon name="GraphQL" svg="/icons/graphql.svg" />
+        <Icon name="PostgreSQL" svg="/icons/postgresql.svg" />
+        <Icon name="MySQL" svg="/icons/mysql.svg" />
+        <Icon name="TypeORM" svg="/icons/typeorm.svg" />
+        <Icon name="NestJS" svg="/icons/nestjs.svg" />
+        <Icon name="Express" svg="/icons/express.svg" />
+        <Icon name="NodeJS" svg="/icons/nodejs.svg" />
+        <Icon name="NextJS" svg="/icons/nextjs.svg" />
+        <Icon name="React" svg="/icons/react.svg" />
+        <Icon name="Angular" svg="/icons/angular.svg" />
+        <Icon name="Typescript" svg="/icons/typescript.svg" />
+        <Icon name="JavaScript" svg="/icons/js.svg" />
+        <Icon name="Tailwind" svg="/icons/tailwind.svg" />
+        <Icon name="CSS" svg="/icons/css.svg" />
+        <Icon name="HTML" svg="/icons/html.svg" />
+
         <Icon name="Nginx" svg="/icons/nginx.svg" />
         <Icon name="Kubernetes" svg="/icons/kubernetes.svg" />
         <Icon name="Docker" svg="/icons/docker.svg" />
@@ -190,24 +211,24 @@ import { certificates } from "../data/certificates";
 
   @keyframes icons-sm {
     to {
-      transform: translateX(360%);
+      transform: translateX(calc(48px * 20));
     }
   }
 
   @keyframes icons {
     to {
-      transform: translateX(160%);
+      transform: translateX(calc(48px * 20));
     }
   }
   @media (min-width: 0) {
     #icons {
-      animation: icons-sm 20s linear infinite both;
+      animation: icons-sm 20s linear infinite;
     }
   }
 
   @media (min-width: 80em) {
     #icons {
-      animation: icons 20s linear infinite both;
+      animation: icons 20s linear infinite;
     }
   }
 
