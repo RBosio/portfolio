@@ -13,7 +13,16 @@ import Button from "./Button.astro";
   <div class="overflow-hidden">
     {
       images.length > 1 ? (
-        <div id="carousel" class="flex items-center -translate-x-full">
+        <div id="carousel" class="flex items-center -translate-x-[0px]">
+          {images.map((image: string) => (
+            <div class="overflow-hidden min-w-full md:h-72 object-cover">
+              <img
+                src={image}
+                alt={title.toLowerCase()}
+                class="img-proy w-full h-full"
+              />
+            </div>
+          ))}
           {images.map((image: string) => (
             <div class="overflow-hidden min-w-full md:h-72 object-cover">
               <img
@@ -39,8 +48,12 @@ import Button from "./Button.astro";
   <p class="text-sm text-center text-white">
     {description}
   </p>
-  <div class="flex justify-center mt-2">
-    <Button name="Código" svg="/icons/github.svg" url={url} />
+  <div class="flex justify-center gap-4 mt-2">
+    {
+      url.map((u: any) => (
+        <Button name={u.name ?? "Código"} svg="/icons/github.svg" url={u.url} />
+      ))
+    }
   </div>
 </article>
 
@@ -62,23 +75,8 @@ import Button from "./Button.astro";
   }
 
   @keyframes carousel {
-    0% {
-      transform: translateX(0%);
-    }
-    20% {
-      transform: translateX(-100%);
-    }
-    40% {
-      transform: translateX(-200%);
-    }
-    60% {
-      transform: translateX(-300%);
-    }
-    80% {
-      transform: translateX(-400%);
-    }
-    100% {
-      transform: translateX(0);
+    to {
+      transform: translateX(calc(-645.33px * 5));
     }
   }
 </style>
