@@ -49,7 +49,7 @@ export const projects = [
         svg: "/icons/zoom.svg",
       },
     ],
-    url: "https://github.com/RBosio/consultoria-medica-online",
+    url: [{ url: "https://github.com/RBosio/consultoria-medica-online" }],
   },
   {
     title: "Hotelmar",
@@ -93,7 +93,7 @@ export const projects = [
         svg: "/icons/mysql.svg",
       },
     ],
-    url: "https://github.com/RBosio/hotelmar",
+    url: [{ url: "https://github.com/RBosio/hotelmar" }],
   },
   {
     title: "GenXDB",
@@ -111,6 +111,57 @@ export const projects = [
         svg: "/icons/npm.svg",
       },
     ],
-    url: "https://github.com/RBosio/genxdb",
+    url: [{ url: "https://github.com/RBosio/genxdb" }],
+  },
+  {
+    title: "ChatApp",
+    subtitle: "Chat en tiempo real",
+    description:
+      "Aplicación que permite agregar amigos, hacer grupos y chatear con gente en tiempo real.",
+    images: [
+      "/projects/chatApp/home.png",
+      "/projects/chatApp/login.png",
+      "/projects/chatApp/chat.png",
+      "/projects/chatApp/signup.png",
+      "/projects/chatApp/friends.png",
+    ],
+    tech: [
+      {
+        name: "HTML",
+        svg: "/icons/html.svg",
+      },
+      {
+        name: "CSS",
+        svg: "/icons/css.svg",
+      },
+      {
+        name: "Tailwind",
+        svg: "/icons/tailwind.svg",
+      },
+      {
+        name: "Angular",
+        svg: "/icons/angular.svg",
+      },
+      {
+        name: "NestJS",
+        svg: "/icons/nestjs.svg",
+      },
+      {
+        name: "TypeORM",
+        svg: "/icons/typeorm.svg",
+      },
+      {
+        name: "MySQL",
+        svg: "/icons/mysql.svg",
+      },
+      {
+        name: "Swagger",
+        svg: "/icons/swagger.svg",
+      },
+    ],
+    url: [
+      { name: "Backend", url: "https://github.com/RBosio/chat-ws-backend" },
+      { name: "Frontend", url: "https://github.com/RBosio/chat-ws-frontend" },
+    ],
   },
 ];
